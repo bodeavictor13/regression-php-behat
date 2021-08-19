@@ -3,7 +3,8 @@
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Gherkin\Node\PyStringNode;
-
+use PHPUnit\Framework\Assert;
+use PHPUnit\TextUI\XmlConfiguration\PHPUnit;
 
 /**
  * Defines application features from the specific context.
@@ -79,7 +80,7 @@ class FeatureContext implements Context
     /**
      * @Given the following people exist:
      */
-    public function theFollowingPeopleExist(TableNode $table)
+    public function theFollowingPeopleExist()
     {
     }
 
@@ -88,7 +89,7 @@ class FeatureContext implements Context
      */
     public function somePrecondition($arg1)
     {
-        
+        // Assert::markTestSkipped('This step failed so we skipped it');
     }
 
     /**
@@ -134,7 +135,7 @@ class FeatureContext implements Context
     /**
      * @Given some other precondition with doc string
      */
-    public function someOtherPreconditionWithDocString(PyStringNode $string)
+    public function someOtherPreconditionWithDocString()
     {
         
     }
